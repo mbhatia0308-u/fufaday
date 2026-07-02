@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Fufa Day</title>
+<title>Happy Fufa Day | Tarun Bhatia</title>
 
 <style>
 
@@ -14,12 +14,16 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:Georgia,serif;
-background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+background:linear-gradient(135deg,#0b132b,#1c2541,#3a506b);
 color:white;
 overflow-x:hidden;
-scroll-behavior:smooth;
+line-height:1.8;
 }
 
 /* Floating Sparkles */
@@ -28,18 +32,20 @@ scroll-behavior:smooth;
 position:fixed;
 width:6px;
 height:6px;
-background:gold;
+background:#FFD700;
 border-radius:50%;
-opacity:.7;
-animation:float 10s linear infinite;
+opacity:.6;
+animation:float 12s linear infinite;
+z-index:0;
 }
 
-.sparkle:nth-child(1){left:10%;animation-delay:0s;}
-.sparkle:nth-child(2){left:25%;animation-delay:2s;}
-.sparkle:nth-child(3){left:40%;animation-delay:4s;}
-.sparkle:nth-child(4){left:55%;animation-delay:6s;}
-.sparkle:nth-child(5){left:70%;animation-delay:1s;}
-.sparkle:nth-child(6){left:85%;animation-delay:3s;}
+.sparkle:nth-child(1){left:8%;animation-delay:0s;}
+.sparkle:nth-child(2){left:20%;animation-delay:2s;}
+.sparkle:nth-child(3){left:35%;animation-delay:4s;}
+.sparkle:nth-child(4){left:50%;animation-delay:6s;}
+.sparkle:nth-child(5){left:65%;animation-delay:1s;}
+.sparkle:nth-child(6){left:80%;animation-delay:3s;}
+.sparkle:nth-child(7){left:92%;animation-delay:5s;}
 
 @keyframes float{
 0%{
@@ -55,8 +61,6 @@ opacity:0;
 }
 }
 
-/* Hero */
-
 .hero{
 height:100vh;
 display:flex;
@@ -64,40 +68,41 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding:30px;
+position:relative;
+z-index:2;
 }
 
 .hero h1{
-font-size:60px;
-color:gold;
+font-size:64px;
+color:#FFD700;
 margin-bottom:20px;
 animation:fadeIn 2s;
 }
 
 .hero h2{
-font-size:38px;
-margin-bottom:20px;
+font-size:34px;
 font-weight:normal;
+margin-bottom:25px;
 }
 
 .hero p{
 font-size:22px;
-max-width:700px;
-line-height:1.8;
+max-width:800px;
 opacity:.9;
 }
 
 .btn{
-margin-top:45px;
+margin-top:40px;
 padding:16px 42px;
 font-size:20px;
+font-weight:bold;
 border:none;
 border-radius:50px;
-background:gold;
+background:#FFD700;
 color:#111;
 cursor:pointer;
-font-weight:bold;
-transition:.4s;
+transition:.35s;
 }
 
 .btn:hover{
@@ -105,60 +110,56 @@ transform:scale(1.08);
 background:white;
 }
 
-/* Letter */
-
-.letter{
-max-width:850px;
-margin:80px auto;
-background:white;
-color:#333;
-padding:50px;
-border-radius:25px;
-box-shadow:0 0 35px rgba(255,215,0,.4);
-display:none;
-animation:fadeUp 1s;
-line-height:2;
-font-size:20px;
+.section{
+padding:90px 25px;
+position:relative;
+z-index:2;
 }
 
-.letter h2{
-color:#b8860b;
-margin-bottom:20px;
+.card{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(14px);
+padding:45px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+border:1px solid rgba(255,255,255,.15);
+}
+
+.section h2{
 text-align:center;
+color:#FFD700;
+font-size:42px;
+margin-bottom:35px;
+}
+
+.card p{
+font-size:21px;
 }
 
 .quote{
-margin:90px auto;
-font-size:28px;
+padding:80px 20px;
 text-align:center;
+font-size:30px;
 font-style:italic;
-color:gold;
-width:80%;
+color:#FFD700;
 }
 
 footer{
 padding:40px;
 text-align:center;
-opacity:.7;
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(50px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+opacity:.8;
 }
 
 @keyframes fadeIn{
 from{
 opacity:0;
+transform:translateY(30px);
 }
 to{
 opacity:1;
+transform:translateY(0);
 }
 }
 
@@ -174,6 +175,7 @@ opacity:1;
 <div class="sparkle"></div>
 <div class="sparkle"></div>
 <div class="sparkle"></div>
+<div class="sparkle"></div>
 
 <section class="hero">
 
@@ -182,53 +184,129 @@ opacity:1;
 <h2>Tarun Bhatia</h2>
 
 <p>
+
 Some people visit once a year,
-yet leave behind memories that stay with us forever.
-Today is a celebration of you.
+yet leave behind memories that last forever.
+
+Today is all about celebrating you.
+
 </p>
 
 <button class="btn" onclick="openLetter()">
+
 Open Your Letter
+
 </button>
 
 </section>
 
-<div class="letter" id="letter">
+<section class="section">
 
-<h2>Dear Fufa,</h2>
+<h2>💌 Dear Fufa</h2>
+
+<div class="card" id="letter" style="display:none;">
 
 <p>
 
 Happy Fufa Day!
 
-Even though we celebrate this special day only once a year, your visit is always something we look forward to with excitement.
+<br><br>
 
-Your warmth, kindness, laughter, and stories make every family gathering brighter. The moments we spend together become memories that stay with us long after you leave.
+Even though we celebrate this wonderful day only once every year, your visit is always something I eagerly wait for.
 
-Thank you for always bringing happiness wherever you go and for being such an amazing part of our family.
+Every conversation, every laugh and every moment spent together becomes a memory worth holding on to.
 
-May this year bring you great health, success, happiness, and countless reasons to smile.
+You have this amazing way of making everyone around you smile without even trying.
 
-Here's to many more wonderful Fufa Days together.
+Thank you for always being so warm, caring and fun to be around.
+
+I hope life continues to bless you with happiness, success, great health and countless beautiful moments.
+
+You truly make Fufa Day feel special every single year.
 
 <br><br>
 
-With love,<br>
-Kaka ❤️
+With lots of love,
+Kaka♥️
+<br>
+
+
+❤️
 
 </p>
 
 </div>
 
+</section>
+<section class="section">
+
+<h2>✨ My Favourite Memory ✨</h2>
+
+<div class="card">
+
+<p>
+
+If there's one memory that always makes me smile, it's from one of my vacations in Gurgaon.
+
+What started as a completely normal evening somehow turned into one of the funniest memories I'll ever have. We picked up that electric mosquito racket and suddenly became absolute mosquito hunters. Every mosquito was treated like it was on a wanted list, and every successful hit felt like we'd completed some secret mission.
+
+We laughed so much over something so unbelievably random. Looking back now, it wasn't really about the mosquitoes at all—it was about spending time together, joking around, and turning the simplest moment into one I'll never forget.
+
+Even today, whenever I see one of those mosquito rackets, I immediately think of that evening and smile.
+
+Some memories don't become special because they're grand or extraordinary. They become special because of the people you share them with.
+
+And this one will always stay with me.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🌟 What Makes You Special 🌟</h2>
+
+<div class="card">
+
+<p>
+
+⭐ Your warmth makes everyone feel welcome.
+
+<br><br>
+
+⭐ Your stories somehow become the highlight of every gathering.
+
+<br><br>
+
+⭐ You always know how to make everyone laugh.
+
+<br><br>
+
+⭐ Every visit becomes a memory worth remembering.
+
+<br><br>
+
+⭐ Thank you for simply being the amazing person you are.
+
+</p>
+
+</div>
+
+</section>
+
 <div class="quote">
 
-"Family isn't measured by the time we spend together, but by the memories we create."
+"Some people leave footprints on the places they visit.
+
+The best people leave footprints on our hearts."
 
 </div>
 
 <footer>
 
-Made with love for Fufa Day ✨
+Made with love for the world's coolest Fufa ❤️
 
 </footer>
 
@@ -236,15 +314,22 @@ Made with love for Fufa Day ✨
 
 function openLetter(){
 
-document.getElementById("letter").style.display="block";
+const letter=document.getElementById("letter");
 
-document.getElementById("letter").scrollIntoView({
+if(letter.style.display==="none"){
+
+letter.style.display="block";
+
+letter.scrollIntoView({
 behavior:"smooth"
 });
+
+}
 
 }
 
 </script>
 
 </body>
+
 </html>
